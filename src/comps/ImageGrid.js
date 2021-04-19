@@ -8,38 +8,6 @@ import {projectStore} from "../firebase/config"
 const ImageGrid =({selected, dark })=>{
     const {docs} = FireStore("images")
 
-    // useEffect(()=>{
-
-    // })
-
-    // useEffect(()=>{
-    //     setTimeout(()=>{
-            
-    //     },1000) 
-        
-    // },[docs])
-    
-    // const [state , dispatch ] = useReducer(reducerFunc , docs)
-    // function reducerFunc(state, action){
-    //     switch (action.type){
-    //         case "LIKE":
-    //             return state.map((item)=>{
-    //                 if(item.id ===action.payload){
-    //                     return {...item, liked : !item.liked}
-    //                 }return item
-    //             })
-    //         case "ADD":
-    //             return [...state , ...action.payload]
-    //     }
-    // }
-
-
-
-        
-    
-
-    // console.log(docs)
-    // console.log("state",state)
 
     function handleLike(doc){
         
@@ -66,7 +34,7 @@ const ImageGrid =({selected, dark })=>{
         
     }
     
-    // console.log("new",docss)
+    
     return (
         <div className="image-grid">
             {docs && docs.map((doc)=>(
