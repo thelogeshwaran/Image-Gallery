@@ -1,0 +1,20 @@
+.options{
+    display: flex;
+    /* border: 1px solid black; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options-like{
+    display: flex;
+    /* border: 2px solid greenyellow; */
+    align-items: center;
+}
+
+.like-button{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background-color: inherit;
+    border: none;
+}

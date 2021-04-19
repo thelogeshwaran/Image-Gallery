@@ -19,7 +19,7 @@ async function fetchdata(collection){
                id : doc.id,
                url : doc.data().url,
                likes : doc.data().likes,
-               liked : doc.data().liked
+               liked : false
            }))
        );
     })

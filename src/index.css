@@ -17,10 +17,11 @@ body{
 }
 .App{
   padding: 1%;
+  height: 100%;
 }
 .content{
-  max-width: 960px;
-  width: 80%;
+  max-width: 100%;
+  width: 100%;
   /* width: 90%; */
   margin: 0 auto;
 }
@@ -128,7 +129,7 @@ output{
 .image-grid{
   margin: 20px auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr  ;
   grid-gap: 40px;
 }
 
