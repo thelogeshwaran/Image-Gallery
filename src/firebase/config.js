@@ -16,5 +16,6 @@ var firebaseConfig = {
 
   const projectStorage = firebase.storage();
   const projectStore  = firebase.firestore();
+  const auth = firebase.auth();
 
-  export { projectStorage , projectStore};
+  export { projectStorage , projectStore, auth};

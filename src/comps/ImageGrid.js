@@ -1,14 +1,12 @@
-import React, { useState,useReducer, useEffect } from "react";
+import React from "react";
 import FireStore from "../hooks/useFireStore";
 import { motion } from "framer-motion";
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import Fab from '@material-ui/core/Fab';
-import {projectStore, projectStorage} from "../firebase/config";
+import {projectStore} from "../firebase/config";
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import "./ImageGrid.css"
 
-const ImageGrid =({selected, dark })=>{
+const ImageGrid =({setSelected, dark })=>{
     const {docs} = FireStore("images")
     
     function handleLike(doc){
@@ -39,20 +37,20 @@ const ImageGrid =({selected, dark })=>{
     }
 
 
-    function deleteHandler(doc){
-        projectStore
-        .collection("images")
-        .doc(doc.id)
-        .delete() 
+    // function deleteHandler(doc){
+    //     projectStore
+    //     .collection("images")
+    //     .doc(doc.id)
+    //     .delete() 
 
-        const delRef = projectStorage.refFromURL(doc.url)
-        delRef.delete()
-        .then(()=>{
-            console.log("deleted")
-        })
-        .catch((err)=>console.log(err))
-    }
-    console.log("render")
+    //     const delRef = projectStorage.refFromURL(doc.url)
+    //     delRef.delete()
+    //     .then(()=>{
+    //         console.log("deleted")
+    //     })
+    //     .catch((err)=>console.log(err))
+    // }
+    // console.log("render")
     
     return (
         <div className="image-grid">
@@ -67,7 +65,7 @@ const ImageGrid =({selected, dark })=>{
                     initial={{opacity:0}}
                     animate={{opacity:1}}
                     transition={{delay:1}}
-                    src={doc.url} alt="images" onClick={()=> selected(doc.url)}/>
+                    src={doc.url} alt="images" onClick={()=> setSelected(doc.url)}/>
 
                 </motion.div>
                 <div  className="options" >
@@ -78,9 +76,9 @@ const ImageGrid =({selected, dark })=>{
                     
                     <div>{doc.likes} likes</div>
                     </div>
-                    <IconButton style={dark ? {color: "white" }: null} onClick={()=> deleteHandler(doc)}>
+                    {/* <IconButton style={dark ? {color: "white" }: null} onClick={()=> deleteHandler(doc)}>
                         <DeleteIcon />
-                    </IconButton>
+                    </IconButton> */}
                 </div>
                 
                 </div>

@@ -51,12 +51,18 @@ body{
 .header-content{
   /* border: 2px solid greenyellow; */
   display: flex;
+  flex-direction: row;
   width: 100%;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
   height: 100%;
   
+}
+.route-buttons{
+  /* border: 2px solid greenyellow; */
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
 }
 .title h1{
   font-family: 'Inconsolata', monospace;

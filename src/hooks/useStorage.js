@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react"
 import firebase from "firebase"
 import {projectStorage, projectStore} from "../firebase/config"
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase/config";
+
 
 const useStorage =(file)=>{
     const[progress, setProgress] = useState(null);
     const[url, setUrl] = useState(null);
     const[error,setError]=useState(null);
-
+    const [user]= useAuthState(auth);
     
     useEffect(()=>{
         const storageRef = projectStorage.ref(file.name);
@@ -18,13 +21,22 @@ const useStorage =(file)=>{
             setError(error)
         },async ()=> {
             const url = await storageRef.getDownloadURL();
-            projectStore.collection("images").add({
-                url : url,
-                likes : 0,
-                liked: false, 
-                timeStamp : firebase.firestore.FieldValue.serverTimestamp()
-            })
-            setUrl(url);
+            if(!user){
+                projectStore.collection("images").add({
+                    url : url,
+                    likes : 0,
+                    liked: false, 
+                    timeStamp : firebase.firestore.FieldValue.serverTimestamp()
+                })
+                setUrl(url);
+            }else{
+                projectStore.collection("users").add({
+                    url : url,
+                    userId :user.uid, 
+                    timeStamp : firebase.firestore.FieldValue.serverTimestamp()
+                })
+                setUrl(url);
+            }
         })
     },[file])
 

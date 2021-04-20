@@ -1,5 +1,7 @@
 import React from 'react';
 import Switch from '@material-ui/core/Switch';
+import Button from '@material-ui/core/Button';
+import {Link } from "react-router-dom";
 
 const Title = ({dark , setDark}) => {
   return (
@@ -10,10 +12,27 @@ const Title = ({dark , setDark}) => {
         onChange={()=>setDark(!dark)}
       />
       </div>
+
+
       <div className="header-content">
-      {/* <h2>Your Pictures</h2> */}
-      <p>Share Your Moments here!</p>
+         <p>Share Your Moments here!</p>
+           {/* <h2>Your Pictures</h2> */}
       </div>
+
+        <div className="route-buttons">
+        <Link style={{textDecoration:"none", margin:"5px"}}   to="/">
+            <Button variant="contained" color="primary">
+              Home
+            </Button>
+          </Link>
+
+          <Link style={{textDecoration:"none", margin:"5px"}} to="/profile">
+            <Button variant="contained" color="primary">
+              Profile
+            </Button>
+          </Link>
+        </div>
+      
       
     </div>
   )
