@@ -1,16 +1,18 @@
 import React, { useEffect } from "react";
-import useStorage from "../hooks/useStorage"
+import useStorage from "../Hooks/useStorage"
 import { motion } from "framer-motion";
 
 
 
 const Progressbar =({file, setFile})=>{
-    const {url , progress } = useStorage(file)
+    const {url , progress } = useStorage(file);
+    
     useEffect(()=>{
         if(url){
             setFile(null)
         }
     },[url,setFile])
+
     return (
         <motion.div 
         initial={{width : 0}}

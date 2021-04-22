@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import {projectStore} from "../firebase/config"
+import {projectStore} from "../Firebase/config"
 
 
 
