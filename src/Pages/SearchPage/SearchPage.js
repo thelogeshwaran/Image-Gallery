@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
 import axios from "axios";
 import SearchGrid from "./SearchGrid";
-import Modal from "../Comps/Modal";
+import Modal from "../../Components/Modal"
 
 
 function SearchPage() {
@@ -20,9 +20,9 @@ function SearchPage() {
                 query: term
               }
         })
-        // console.log(response)
+    
         setImages(response.data.results)
-        // console.log(response.data.results)
+       
     }
     useEffect(()=>{
         onSubmit("dance");

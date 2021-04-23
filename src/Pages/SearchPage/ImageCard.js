@@ -1,11 +1,11 @@
 import React,{useState} from "react";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
-import {projectStore} from "../Firebase/config";
+import {projectStore} from "../../Firebase/Config";
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import firebase from "firebase";
 import BookmarkIcon from '@material-ui/icons/Bookmark';
-import { useUser } from "../Context/UserContext";
+import { useUser } from "../../Context/UserContext";
 
 
 
@@ -15,15 +15,8 @@ export const ImageCard = ({doc,setSelected}) => {
     
     const [ bookmark , setBookmark] = useState(false);
 
-
-    
-
-    ///Alert function
-    
-
     const addToPersonal=(doc)=>{
-        // console.log(doc)
-        // console.log(user)
+        
         
         if(user){
             setBookmark(true)

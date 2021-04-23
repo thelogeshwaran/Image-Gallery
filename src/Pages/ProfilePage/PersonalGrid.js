@@ -1,11 +1,12 @@
 import React from "react";
-import FireStore from "../Hooks/useFireStore";
+import usePersonalStore from "../../Hooks/usePersonalStore";
 import { motion } from "framer-motion";
-import {projectStore} from "../Firebase/config";
+import {projectStore} from "../../Firebase/Config";
 import DeleteIcon from '@material-ui/icons/Delete';
 import { toast } from "react-toastify";
 import Button from '@material-ui/core/Button';
-import { useUser } from "../Context/UserContext";
+import { useUser } from "../../Context/UserContext";
+
 
 
 
@@ -13,7 +14,7 @@ const PersonalGrid =({setSelected  })=>{
 
     const { user } = useUser();
 
-    const {docs} = FireStore("users")
+    const {docs} = usePersonalStore("users");
     
 
     function deleteHandler(doc){
@@ -24,7 +25,7 @@ const PersonalGrid =({setSelected  })=>{
         
         toast.success("Successfully Deleted!")
     }
-    // console.log("render")
+    
     
     return (
         <div className="image-grid">

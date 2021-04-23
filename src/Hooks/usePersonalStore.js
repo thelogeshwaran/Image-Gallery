@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
-import {projectStore} from "../Firebase/config"
+import {projectStore} from "../Firebase/Config"
 
 
 
-const FireStore =(collection) => {
+const usePersonalStore =(collection) => {
     
 const [docs,setDocs] = useState([])
 useEffect(()=>{
@@ -28,4 +28,4 @@ return {docs}
 }
 
 
-export default FireStore
+export default usePersonalStore

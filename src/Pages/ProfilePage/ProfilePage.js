@@ -1,16 +1,16 @@
 import React,{ useEffect, useState} from  "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import firebase from "firebase";
-import { auth } from "../Firebase/config";
+import { auth } from "../../Firebase/Config";
 import Button from '@material-ui/core/Button';
-import UploadForm from "../Comps/UploadForm";
+import UploadForm from "../../Components/UploadForm";
 import PersonalGrid from "./PersonalGrid";
-import Modal from "../Comps/Modal"
+import Modal from "../../Components/Modal"
 import { toast } from "react-toastify";
 import Avatar from '@material-ui/core/Avatar';
-import "../index.css";
-import { useUser } from "../Context/UserContext";
-import { usePirvacy } from "../Context/PrivacyContext";
+import "../../index.css";
+import { useUser } from "../../Context/UserContext";
+import { usePrivacy } from "../../Context/PrivacyContext";
 
 
 
@@ -18,7 +18,7 @@ import { usePirvacy } from "../Context/PrivacyContext";
 const Profile=()=>{
 
     const { user } = useUser();
-    // console.log(user)
+   
     
     const [selected, setSelected] = useState(null);
     const signOut = async ()=> {
@@ -62,14 +62,14 @@ const Profile=()=>{
 function ProfilePage(){
     const { user , setUser } = useUser();
     const [userProfile] = useAuthState(auth);
-    // console.log("rendered")
+  
 
 
     useEffect(()=>{
         setUser(userProfile);
     },[userProfile,setUser])
 
-    const { setPrivacy } = usePirvacy();
+    const { setPrivacy } = usePrivacy();
     useEffect(()=>{
         setPrivacy("personal")
     },[])

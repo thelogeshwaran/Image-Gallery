@@ -1,14 +1,14 @@
 import React from 'react';
-import HomePage from "./HomePage/HomePage"
-import Title from './Comps/Title';
-import ProfilePage from "./ProfilePage/ProfilePage"
+import HomePage from "./Pages/HomePage/HomePage"
+import Title from './Components/Title';
+import ProfilePage from "./Pages/ProfilePage/ProfilePage"
 import { BrowserRouter , Route } from "react-router-dom"; 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import SearchPage from "./SearchPage/SearchPage";
+import SearchPage from "./Pages/SearchPage/SearchPage"
 import { useTheme } from "./Context/ThemeContext";
 import { useAuthState } from "react-firebase-hooks/auth";
-import {auth} from "./Firebase/config";
+import {auth} from "./Firebase/Config";
 import { useUser } from "./Context/UserContext";
 
 function App() {

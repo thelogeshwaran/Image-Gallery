@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import  { ThemeProvider } from "./Context/ThemeContext";
 import { UserProvider } from "./Context/UserContext";
-import { PirvacyProvider } from "./Context/PrivacyContext";
+import { PrivacyProvider } from "./Context/PrivacyContext";
 
 
 
@@ -12,9 +12,9 @@ ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider>
       <UserProvider>
-        <PirvacyProvider>
+        <PrivacyProvider>
            <App/>
-        </PirvacyProvider>
+        </PrivacyProvider>
       </UserProvider>
     </ThemeProvider>
   </React.StrictMode>,

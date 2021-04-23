@@ -5,11 +5,7 @@ import { ImageCard } from "./ImageCard";
 
 
 const SearchGrid =({images,setSelected})=>{
-    
-    
-   
 
-    
     return (
         <div className="image-grid">
             {images && images.map((doc)=>(

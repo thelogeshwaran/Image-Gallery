@@ -1,13 +1,13 @@
 import React,{useState} from "react";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
-import {projectStore} from "../Firebase/config";
+import {projectStore} from "../../Firebase/Config";
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import firebase from "firebase";
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import Fab from '@material-ui/core/Fab';
 import BookmarkIcon from '@material-ui/icons/Bookmark';
-import { useUser } from "../Context/UserContext";
+import { useUser } from "../../Context/UserContext";
 
 
 
@@ -17,12 +17,10 @@ export const ImageItem = ({doc,setSelected}) => {
     const [like , setLike ]= useState(false);
     const [ bookmark , setBookmark] = useState(false)
 
-    // console.log(user)
+
 
 
     function handleLike(doc){
-        
-        // console.log(doc.url)
         
        if(!like){
            setLike(!like);
@@ -45,7 +43,7 @@ export const ImageItem = ({doc,setSelected}) => {
        }       
     }
 
-    ///Alert function
+   
     
 
     const addToPersonal=(doc)=>{

@@ -1,18 +1,18 @@
 import React,{useEffect, useState} from "react";
-import UploadForm from "../Comps/UploadForm"
+import UploadForm from "../../Components/UploadForm"
 import ImageGrid from "./ImageGrid"
-import Modal from "../Comps/Modal";
-import { usePirvacy } from "../Context/PrivacyContext";
+import Modal from "../../Components/Modal";
+import { usePrivacy } from "../../Context/PrivacyContext";
 
 
 
 function HomePage(){
     const [selected, setSelected] = useState(null);
-    const { setPrivacy } = usePirvacy();
+    const { setPrivacy } = usePrivacy();
     
     
     useEffect(()=>{
-        setPrivacy("public")
+        setPrivacy("public");
     },[])
    
     return (
