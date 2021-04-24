@@ -1,7 +1,7 @@
 import React from 'react';
 import Switch from '@material-ui/core/Switch';
 import Button from '@material-ui/core/Button';
-import {Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../index.css";
 import ExploreSharpIcon from '@material-ui/icons/ExploreSharp';
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
@@ -30,17 +30,17 @@ const Title = () => {
                </div>
 
             <div className="desktop-buttons">
-                <Link style={{textDecoration:"none", margin:"5px"}}   to="/">
+                <NavLink exact={true} activeStyle={  { backgroundColor:"#9FA7AB"}  } style={{textDecoration:"none", margin:"5px"}}   to="/">
                   <Button style={ dark ?  {color:"white"} : {color:"black"}   }>Home</Button>
-                </Link>
+                </NavLink>
 
-                <Link style={{textDecoration:"none", margin:"5px"}} to="/search">
+                <NavLink activeStyle={  { backgroundColor:"#9FA7AB"}  } style={{textDecoration:"none", margin:"5px"}} to="/search">
                   <Button style={ dark ?  {color:"white"} : {color:"black"}  }>Explore</Button> 
-                </Link>
+                </NavLink>
               
-                <Link style={{textDecoration:"none", margin:"5px"}} to="/profile">
+                <NavLink  activeStyle={  { backgroundColor:"#9FA7AB"}  } style={{textDecoration:"none", margin:"5px"}} to="/profile">
                  <Button style={ dark ?  {color:"white"} : {color:"black"}   }>{ user ? "profile" : "sign in"}</Button>
-                </Link>
+                </NavLink>
             </div>
               
         </div>
@@ -49,17 +49,17 @@ const Title = () => {
         
 
             <div className="mob-buttons" style={dark ? {backgroundColor:"#252525",color:"white"} :{backgroundColor:"white"}}>
-               <Link style={{textDecoration:"none", margin:"5px"}}   to="/">
+               <NavLink  style={{textDecoration:"none", margin:"5px"}}   to="/">
                   <HomeRoundedIcon style={  dark ? { height: "40px", width:"40px",backgroundColor:"#252525",color:"white"} : { height: "40px", width:"40px",backgroundColor:"white",color:"black"}}/>
-                </Link>
+                </NavLink>
 
-                <Link style={{textDecoration:"none", margin:"5px"  }} to="/search">
+                <NavLink style={{textDecoration:"none", margin:"5px"  }} to="/search">
                   <ExploreSharpIcon  style={  dark ? { height: "40px", width:"40px",backgroundColor:"#252525",color:"white"} : { height: "40px", width:"40px",backgroundColor:"white",color:"black"}}/> 
-                </Link>
+                </NavLink>
                 
-                <Link style={{textDecoration:"none", margin:"5px"}} to="/profile">
+                <NavLink style={{textDecoration:"none", margin:"5px"}} to="/profile">
                   <AccountCircleRoundedIcon style={  dark ? { height: "40px", width:"40px",backgroundColor:"#252525",color:"white"} : { height: "40px", width:"40px",backgroundColor:"white",color:"black"}}/>
-                </Link>
+                </NavLink>
 
             </div>
         

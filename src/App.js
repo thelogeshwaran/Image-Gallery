@@ -8,19 +8,19 @@ import 'react-toastify/dist/ReactToastify.css';
 import SearchPage from "./Pages/SearchPage/SearchPage"
 import { useTheme } from "./Context/ThemeContext";
 import { useAuthState } from "react-firebase-hooks/auth";
-import {auth} from "./Firebase/Config";
+import { auth } from "./Firebase/Config";
 import { useUser } from "./Context/UserContext";
 
 function App() {
   const { setUser } = useUser();
   const [userProfile] = useAuthState(auth);
   setUser(userProfile);
-  const { dark} = useTheme();
+  const { dark } = useTheme();
 
   return (
 
 
-    <div  className= "App"style={dark ? {backgroundColor:"#9FA7AB",color:"white"} : {color:"black" ,backgroundColor:"white"}}>
+    <div  className= "App"style={dark ? { backgroundColor:"#9FA7AB",color:"white" } : { color:"black" ,backgroundColor:"white" }}>
       <div >
       <ToastContainer limit={2}/>
 
