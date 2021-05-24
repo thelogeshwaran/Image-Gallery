@@ -6,7 +6,7 @@ import ProgressBar from "./Progressbar"
 const UploadForm = ()=>{
     const [file, setFile] = useState(null);
     const [error , setError ] = useState(null);
-
+    
 
     function inputHandler(e){
 
