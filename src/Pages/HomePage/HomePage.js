@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from "react";
-import UploadForm from "../../Components/UploadForm"
+import UploadForm from "../../Components/UploadForm/UploadForm"
 import ImageGrid from "./ImageGrid"
 import Modal from "../../Components/Modal";
 import { usePrivacy } from "../../Context/PrivacyContext";

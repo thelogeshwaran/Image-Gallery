@@ -3,7 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import firebase from "firebase";
 import { auth } from "../../Firebase/Config";
 import Button from '@material-ui/core/Button';
-import UploadForm from "../../Components/UploadForm";
+import UploadForm from "../../Components/UploadForm/UploadForm";
 import PersonalGrid from "./PersonalGrid";
 import Modal from "../../Components/Modal"
 import { toast } from "react-toastify";
