@@ -6,12 +6,13 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import { toast } from "react-toastify";
 import Button from "@material-ui/core/Button";
 import { useUser } from "../../../Context/UserContext";
-import "./PersonalGrid.css"
+import "./PersonalGrid.css";
+import { Loader } from "../../Common/Loader/Loader";
 
 const PersonalGrid = ({ setSelected }) => {
   const { user } = useUser();
 
-  const { docs } = usePersonalStore("users");
+  const { docs, loader } = usePersonalStore("users");
 
   function deleteHandler(doc) {
     projectStore.collection("users").doc(doc.id).delete();
@@ -20,7 +21,14 @@ const PersonalGrid = ({ setSelected }) => {
   }
 
   return (
-    <div className="personal-grid">
+    <div>
+    {
+      loader ? (
+        <div className="loader">
+          <Loader/>
+        </div> 
+      ): (
+        <div className="personal-grid">
       {docs &&
         docs.map((doc) => {
           if (doc.userId === user.uid) {
@@ -56,6 +64,9 @@ const PersonalGrid = ({ setSelected }) => {
             return null;
           }
         })}
+    </div>
+      )
+    }
     </div>
   );
 };

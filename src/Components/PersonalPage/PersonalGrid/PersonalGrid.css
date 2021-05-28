@@ -5,6 +5,10 @@
     grid-gap: 40px;
   }
 
+  .loader{
+    display: flex;
+    justify-content: center;
+  }
   .personal-wrap {
     overflow: hidden;
     height: 0;
@@ -26,4 +30,13 @@
     justify-content: space-between;
     align-items: center;
     margin: 5px; 
+  }
+
+  @media (max-width: 768px) {
+    .personal-grid {
+      margin: 20px auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 40px;
+    }
   }

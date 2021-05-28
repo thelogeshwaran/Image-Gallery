@@ -26,20 +26,6 @@ body {
 
 
 
-
-/* image grid styles */
-
-
-/* modal styles */
-
-/* Profile page */
-
-
-/* Search Bar */
-
-
-/* //For mobiles */
-
 @media (max-width: 768px) {
   .image-grid {
     margin: 20px auto;
@@ -49,25 +35,6 @@ body {
   }
   .content {
     width: 80%;
-  }
-
-  .desktop-buttons {
-    display: none;
-  }
-
-  .mob-buttons {
-    display: flex;
-    background-color: white;
-    width: 100%;
-    justify-content: space-around;
-    position: fixed;
-    bottom: 0;
-    z-index: 12;
-    height: 50px;
-    border-top: 1px solid #9fa7ab;
-  }
-  .modal img {
-    margin: 70px auto;
   }
   .App {
     padding: 0%;
