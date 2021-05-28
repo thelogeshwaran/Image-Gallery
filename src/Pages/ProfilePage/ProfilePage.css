@@ -1,0 +1,16 @@
+.profile-header{
+    display: flex;
+    justify-content: space-between;
+    margin:10px;
+}
+.user-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .user-name {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+  }

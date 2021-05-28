@@ -4,13 +4,14 @@ import {projectStore} from "../Firebase/Config"
 
 
 const usePersonalStore =(collection) => {
-    
+    const [loader, setLoader]= useState(false);
 const [docs,setDocs] = useState([])
 useEffect(()=>{
     fetchdata(collection)
 },[collection])
 
 async function fetchdata(collection){
+    setLoader(true)
     await projectStore.collection(collection)
     .orderBy("timeStamp","desc")
     .onSnapshot((snap)=>{
@@ -21,10 +22,11 @@ async function fetchdata(collection){
                userId : doc.data().userId
            }))
        );
+       setLoader(false)
     })
 }
 
-return {docs}
+return {docs, loader}
 }
 
 

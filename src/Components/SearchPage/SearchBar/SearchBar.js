@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../index"
+import "./SearchBar.css"
 import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
 
 

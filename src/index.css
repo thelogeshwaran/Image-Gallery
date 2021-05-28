@@ -1,46 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
-
-:root{
+:root {
   --primary: black;
-  /* --secondary: #4e4e4e; */
   --error: #ff4a4a;
 }
 
-/* base styles & title */
-body{
+
+body {
   font-family: "Noto Serif";
   color: var(--secondary);
-  
- 
+
   margin: 0;
 }
-.App{
+.App {
   padding: 0%;
   padding-bottom: 6%;
-  
 }
-.content{
+.content {
   max-width: 100%;
   width: 90%;
-  /* width: 90%; */
   margin: 0 auto;
-}
-.mob-buttons{
-  display: none;
-}
 
-.header{
-  
-  color: black;
-  box-sizing: border-box;
-  height: 15vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin: 0 auto;
+
   border-bottom: 1px solid black;
   padding: 0% 5%;
   width: 100%;
@@ -93,10 +76,26 @@ label input{
   height: 0;
   width: 0;
   opacity: 0;
+
 }
 
 
-label{
+
+
+@media (max-width: 768px) {
+  .image-grid {
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+  }
+  .content {
+    width: 80%;
+  }
+  .App {
+    padding: 0%;
+    padding-bottom: 7%;
+  }
 
   display: block;
   height: 30px;
@@ -284,6 +283,5 @@ output{
 .App{
   padding: 0%;
   padding-bottom: 7%;
-  
-}
+
 }
