@@ -2,15 +2,15 @@ import React from 'react';
 import Switch from '@material-ui/core/Switch';
 import Button from '@material-ui/core/Button';
 import { NavLink } from "react-router-dom";
-import "../index.css";
 import ExploreSharpIcon from '@material-ui/icons/ExploreSharp';
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
-import { useTheme } from "../Context/ThemeContext"
+import { useTheme } from "../../../Context/ThemeContext"
 import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
-import { useUser } from "../Context/UserContext";
+import { useUser } from "../../../Context/UserContext";
+import "./NavBar.css"
 
 
-const Title = () => {
+const NavBar = () => {
 
   const { dark, setDark }  = useTheme();
   const { user } = useUser(); 
@@ -82,4 +82,4 @@ const Title = () => {
   )
 }
 
-export default Title;
+export default NavBar;

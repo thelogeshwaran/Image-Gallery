@@ -1,6 +1,6 @@
 import React from 'react';
 import HomePage from "./Pages/HomePage/HomePage"
-import Title from './Components/Title';
+import NavBar from './Components/Common/NavBar/NavBar';
 import ProfilePage from "./Pages/ProfilePage/ProfilePage"
 import { BrowserRouter , Route } from "react-router-dom"; 
 import { ToastContainer } from 'react-toastify';
@@ -27,7 +27,7 @@ function App() {
       <BrowserRouter>
         <div>
 
-          <Title />
+          <NavBar />
 
             <div className="content">
               <Route path="/" exact ><HomePage  /></Route>

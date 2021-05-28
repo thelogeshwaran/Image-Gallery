@@ -1,7 +1,7 @@
 import React from "react";
-import useFireStore from "../../Hooks/useFireStore";
-import "../../index";
-import { ImageItem } from "./ImageItem";
+import useFireStore from "../../../Hooks/useFireStore";
+import "./ImageGrid.css"
+import { ImageItem } from "../ImageItem/ImageItem";
 
 const ImageGrid =({setSelected })=>{
     const {docs} = useFireStore("images")

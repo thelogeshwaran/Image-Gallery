@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import useStorage from "../Hooks/useStorage"
+import useStorage from "../../../Hooks/useStorage"
 import { motion } from "framer-motion";
-
+import "./ProgressBar.css";
 
 
 const Progressbar =({file, setFile})=>{

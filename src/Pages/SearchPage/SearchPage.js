@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import SearchBar from "./SearchBar";
+import SearchBar from "../../Components/SearchPage/SearchBar/SearchBar";
 import axios from "axios";
-import SearchGrid from "./SearchGrid";
-import Modal from "../../Components/Modal"
+import SearchGrid from "../../Components/SearchPage/SearchGrid/SearchGrid";
+import Modal from "../../Components/Modal/Modal"
 
 
 function SearchPage() {
