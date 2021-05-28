@@ -41,7 +41,6 @@ body{
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
-  /* border: 2px solid greenyellow; */
   border-bottom: 1px solid black;
   padding: 0% 5%;
   width: 100%;
@@ -50,7 +49,7 @@ body{
 .header-title{
   font-family:  'Montserrat', sans-serif;
   padding-left: 5%;
-  /* border: 1px solid black; */
+  
 }
 .desktop-buttons{
   padding-right: 5%;
@@ -62,7 +61,6 @@ body{
 }
 
 .header-content{
-  /* border: 2px solid greenyellow; */
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -76,7 +74,6 @@ body{
   font-family:  'Montserrat', sans-serif;
 }
 .desktop-nav{
-  /* border: 2px solid greenyellow; */
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -169,14 +166,13 @@ output{
 }
 .options{
   display: flex;
-  /* border: 1px solid black; */
+  
   justify-content: space-between;
   align-items: center;
 }
 
 .options-like{
   display: flex;
-  /* border: 2px solid greenyellow; */
   align-items: center;
   padding-top: 8px;
 }
@@ -210,7 +206,7 @@ output{
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid black; */
+  
 }
 .user-name{
   font-family: 'Montserrat', sans-serif;
@@ -228,7 +224,7 @@ output{
   align-items: flex-end;
   justify-content: center;
   flex-direction: row;
-  /* border: 1px solid black; */
+  
   
 }
 
@@ -270,7 +266,6 @@ output{
 
 
 .mob-buttons{
-  /* border: 2px solid greenyellow; */
   display: flex;
   background-color: white;
   width: 100%;
