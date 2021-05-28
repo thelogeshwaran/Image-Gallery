@@ -22,51 +22,49 @@ const PersonalGrid = ({ setSelected }) => {
 
   return (
     <div>
-    {
-      loader ? (
+      {loader ? (
         <div className="loader">
-          <Loader/>
-        </div> 
-      ): (
+          <Loader />
+        </div>
+      ) : (
         <div className="personal-grid">
-      {docs &&
-        docs.map((doc) => {
-          if (doc.userId === user.uid) {
-            return (
-              <div key={doc.id}>
-                <motion.div
-                  layout
-                  whileHover={{ opacity: 1, scale: 0.9 }}
-                  className="personal-wrap"
-                >
-                  <motion.img
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1 }}
-                    src={doc.url}
-                    alt="images"
-                    onClick={() => setSelected(doc.url)}
-                  />
-                </motion.div>
-                <div className="personal-options">
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    startIcon={<DeleteIcon />}
-                    onClick={() => deleteHandler(doc)}
-                  >
-                    Delete
-                  </Button>
-                </div>
-              </div>
-            );
-          } else {
-            return null;
-          }
-        })}
-    </div>
-      )
-    }
+          {docs &&
+            docs.map((doc) => {
+              if (doc.userId === user.uid) {
+                return (
+                  <div key={doc.id}>
+                    <motion.div
+                      layout
+                      whileHover={{ opacity: 1, scale: 0.9 }}
+                      className="personal-wrap"
+                    >
+                      <motion.img
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 1 }}
+                        src={doc.url}
+                        alt="images"
+                        onClick={() => setSelected(doc.url)}
+                      />
+                    </motion.div>
+                    <div className="personal-options">
+                      <Button
+                        variant="contained"
+                        color="secondary"
+                        startIcon={<DeleteIcon />}
+                        onClick={() => deleteHandler(doc)}
+                      >
+                        Delete
+                      </Button>
+                    </div>
+                  </div>
+                );
+              } else {
+                return null;
+              }
+            })}
+        </div>
+      )}
     </div>
   );
 };

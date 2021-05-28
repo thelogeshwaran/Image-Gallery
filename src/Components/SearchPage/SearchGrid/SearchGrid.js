@@ -1,5 +1,5 @@
 import React from "react";
-import "./SearchGrid.css"
+import "./SearchGrid.css";
 
 import { ImageCard } from "../ImageCard/ImageCard";
 

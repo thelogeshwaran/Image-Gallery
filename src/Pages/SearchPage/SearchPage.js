@@ -4,15 +4,15 @@ import axios from "axios";
 import SearchGrid from "../../Components/SearchPage/SearchGrid/SearchGrid";
 import Modal from "../../Components/Common/Modal/Modal";
 import { Loader } from "../../Components/Common/Loader/Loader";
-import "./SearchPage.css"
+import "./SearchPage.css";
 
 function SearchPage() {
   const [images, setImages] = useState([]);
   const [selected, setSelected] = useState(null);
-  const [loader, setLoader]= useState(false)
+  const [loader, setLoader] = useState(false);
 
   const onSubmit = async (term) => {
-      setLoader(true)
+    setLoader(true);
     const response = await axios.get("https://api.unsplash.com/search/photos", {
       headers: {
         Authorization: "Client-ID oxORx9oGOoqBOxsmBkMmGYuVjOX9vGqZf0AFvMXspec",
@@ -21,7 +21,7 @@ function SearchPage() {
         query: term,
       },
     });
-    setLoader(false)
+    setLoader(false);
     setImages(response.data.results);
   };
   useEffect(() => {
