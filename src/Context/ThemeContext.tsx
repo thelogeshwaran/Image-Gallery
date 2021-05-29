@@ -1,6 +1,9 @@
 import React, { createContext, FC, useContext, useState } from "react";
-
-const ThemeContext = createContext<any | null>(null);
+interface Props{
+  dark : boolean ;
+  setDark : Function;
+}
+const ThemeContext = createContext<Props>({} as Props);
 
 export const ThemeProvider: React.FC = ({ children }) => {
   const [dark, setDark] = useState<boolean>(false);

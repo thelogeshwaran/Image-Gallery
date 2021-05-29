@@ -4,7 +4,7 @@ import { ImageCard } from "../ImageCard/ImageCard";
 
 interface ChildProps{
   images : any[];
-  setSelected : any;
+  setSelected :React.Dispatch<React.SetStateAction<string | null>>;
 }
 const SearchGrid: React.FC<ChildProps>  = ({ images , setSelected }) => {
   return (

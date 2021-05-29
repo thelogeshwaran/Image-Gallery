@@ -4,7 +4,7 @@ import "./UploadForm.css"
 
 
 const UploadForm = ()=>{
-    const [file, setFile] = useState<any|null>(null);
+    const [file, setFile] = useState<File|null>(null);
     const [error , setError ] = useState<string|null>(null);
     
 

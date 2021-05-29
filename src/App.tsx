@@ -8,9 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import SearchPage from "./Pages/SearchPage/SearchPage";
 import { useTheme } from "./Context/ThemeContext";
 
-
 function App() {
-  
   const { dark } = useTheme();
 
   return (

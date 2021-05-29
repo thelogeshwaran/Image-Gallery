@@ -3,14 +3,14 @@ import "./SearchBar.css"
 import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
 
 type ChildProps ={
-    onSubmit : any;
+    onSubmit : Function;
 }
 
 const SearchBar: React.FC<ChildProps> = ({onSubmit}) => {
     const [input, setInput] = useState("");
 
-    const submitHandler = (event : any) => {
-        event.preventDefault();
+    const submitHandler = (e: React.FormEvent): void => {
+        e.preventDefault();
         onSubmit(input)
     }
     return (

@@ -8,7 +8,7 @@ import "./SearchPage.css"
 
 function SearchPage() {
   const [images, setImages] = useState([]);
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState<string|null>(null);
   const [loader, setLoader]= useState(false)
 
   const onSubmit = async (term : string) => {

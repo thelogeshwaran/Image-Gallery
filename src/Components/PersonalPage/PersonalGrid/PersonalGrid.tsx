@@ -8,9 +8,10 @@ import Button from "@material-ui/core/Button";
 import { useUser } from "../../../Context/UserContext";
 import "./PersonalGrid.css";
 import { Loader } from "../../Common/Loader/Loader";
+import { PersonalDoc } from "../../../Context/Types";
 
 interface ChildProps{
-  setSelected : any;
+  setSelected : React.Dispatch<React.SetStateAction<string | null>>;
 }
 
 const PersonalGrid: React.FC<ChildProps> = ({ setSelected }) => {
@@ -18,7 +19,7 @@ const PersonalGrid: React.FC<ChildProps> = ({ setSelected }) => {
 
   const { docs, loader } = usePersonalStore("users");
 
-  function deleteHandler(doc : any) {
+  function deleteHandler(doc : PersonalDoc) {
     projectStore.collection("users").doc(doc.id).delete();
 
     toast.success("Successfully Deleted!");
@@ -34,7 +35,7 @@ const PersonalGrid: React.FC<ChildProps> = ({ setSelected }) => {
       ): (
         <div className="personal-grid">
       {docs &&
-        docs.map((doc : any) => {
+        docs.map((doc : PersonalDoc) => {
           if (doc.userId === user.uid) {
             return (
               <div key={doc.id}>

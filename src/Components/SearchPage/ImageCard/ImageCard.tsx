@@ -11,14 +11,14 @@ import "./ImageCard.css";
 
 interface ChildProps{
   doc: any;
-  setSelected : any;
+  setSelected : React.Dispatch<React.SetStateAction<string | null>>;
 }
 
 export const ImageCard: React.FC<ChildProps> = ({ doc, setSelected }) => {
   const { user } = useUser();
 
-  const [bookmark, setBookmark] = useState(false);
-
+  const [bookmark, setBookmark] = useState<boolean>(false);
+  console.log(doc)
   const addToPersonal = (doc : any) => {
     if (user) {
       setBookmark(true);
