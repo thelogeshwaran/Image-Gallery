@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useState } from "react";
 
-const UserContext = createContext();
+const UserContext = createContext<any | null>(null);
 
-export function UserProvider({ children }) {
-  const [user, setUser] = useState(false);
+export const UserProvider : React.FC = ({ children })=> {
+  const [user, setUser] = useState<any>(false);
 
   return (
     <UserContext.Provider value={{ user, setUser }}>

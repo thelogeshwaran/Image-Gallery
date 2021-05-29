@@ -2,11 +2,14 @@ import React from "react";
 import useFireStore from "../../../Hooks/useFireStore";
 import "./ImageGrid.css";
 import { ImageItem } from "../ImageItem/ImageItem";
-import { Loader } from "../../../Components/Common/Loader/Loader";
+import { Loader } from "../../Common/Loader/Loader";
 
-const ImageGrid = ({ setSelected }) => {
+interface ChildProps {
+  setSelected: any;
+}
+const ImageGrid: React.FC<ChildProps> = ({ setSelected }) => {
   const { docs, loader } = useFireStore("images");
-
+  console.log("done")
   return (
     <div>
       {loader ? (
@@ -16,7 +19,7 @@ const ImageGrid = ({ setSelected }) => {
       ) : (
         <div className="image-grid">
           {docs &&
-            docs.map((doc) => (
+            docs.map((doc: any) => (
               <ImageItem key={doc.id} doc={doc} setSelected={setSelected} />
             ))}
         </div>

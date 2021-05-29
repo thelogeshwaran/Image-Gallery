@@ -8,12 +8,18 @@ import BookmarkIcon from "@material-ui/icons/Bookmark";
 import { useUser } from "../../../Context/UserContext";
 import "./ImageCard.css";
 
-export const ImageCard = ({ doc, setSelected }) => {
+
+interface ChildProps{
+  doc: any;
+  setSelected : any;
+}
+
+export const ImageCard: React.FC<ChildProps> = ({ doc, setSelected }) => {
   const { user } = useUser();
 
   const [bookmark, setBookmark] = useState(false);
 
-  const addToPersonal = (doc) => {
+  const addToPersonal = (doc : any) => {
     if (user) {
       setBookmark(true);
       projectStore.collection("users").add({

@@ -9,12 +9,16 @@ import { useUser } from "../../../Context/UserContext";
 import "./PersonalGrid.css";
 import { Loader } from "../../Common/Loader/Loader";
 
-const PersonalGrid = ({ setSelected }) => {
+interface ChildProps{
+  setSelected : any;
+}
+
+const PersonalGrid: React.FC<ChildProps> = ({ setSelected }) => {
   const { user } = useUser();
 
   const { docs, loader } = usePersonalStore("users");
 
-  function deleteHandler(doc) {
+  function deleteHandler(doc : any) {
     projectStore.collection("users").doc(doc.id).delete();
 
     toast.success("Successfully Deleted!");
@@ -30,7 +34,7 @@ const PersonalGrid = ({ setSelected }) => {
       ): (
         <div className="personal-grid">
       {docs &&
-        docs.map((doc) => {
+        docs.map((doc : any) => {
           if (doc.userId === user.uid) {
             return (
               <div key={doc.id}>

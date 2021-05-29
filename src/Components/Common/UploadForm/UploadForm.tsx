@@ -4,13 +4,13 @@ import "./UploadForm.css"
 
 
 const UploadForm = ()=>{
-    const [file, setFile] = useState(null);
-    const [error , setError ] = useState(null);
+    const [file, setFile] = useState<any|null>(null);
+    const [error , setError ] = useState<string|null>(null);
     
 
-    function inputHandler(e){
-
-        const image = e.target.files[0] 
+    function inputHandler(e: React.FormEvent<HTMLInputElement>){
+        
+        const image = (e.target as HTMLInputElement).files![0]  
         const types =["image/jpeg","image/png"]
         if(image && types.includes(image.type)){
             setFile(image);

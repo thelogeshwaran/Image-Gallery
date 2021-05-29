@@ -11,7 +11,7 @@ function SearchPage() {
   const [selected, setSelected] = useState(null);
   const [loader, setLoader]= useState(false)
 
-  const onSubmit = async (term) => {
+  const onSubmit = async (term : string) => {
       setLoader(true)
     const response = await axios.get("https://api.unsplash.com/search/photos", {
       headers: {

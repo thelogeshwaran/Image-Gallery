@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useState } from "react";
 
-const PrivacyContext = createContext();
+const PrivacyContext = createContext<any | null>(null);
 
-export function PrivacyProvider({ children }) {
+export const PrivacyProvider: React.FC = ({ children }) => {
   const [privacy, setPrivacy] = useState("public");
 
   return (

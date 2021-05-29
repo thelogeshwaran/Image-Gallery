@@ -3,7 +3,11 @@ import useStorage from "../../../Hooks/useStorage";
 import { motion } from "framer-motion";
 import "./ProgressBar.css";
 
-const Progressbar = ({ file, setFile }) => {
+interface ChildProps {
+  file: any;
+  setFile:React.Dispatch<React.SetStateAction<any>>;
+}
+const Progressbar: React.FC<ChildProps> = ({ file, setFile }) => {
   const { url, progress } = useStorage(file);
 
   useEffect(() => {

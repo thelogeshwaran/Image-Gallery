@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import "./SearchBar.css"
 import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
 
+type ChildProps ={
+    onSubmit : any;
+}
 
-function SearchBar({onSubmit}){
+const SearchBar: React.FC<ChildProps> = ({onSubmit}) => {
     const [input, setInput] = useState("");
 
-    const submitHandler = (event) => {
+    const submitHandler = (event : any) => {
         event.preventDefault();
         onSubmit(input)
     }

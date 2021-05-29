@@ -1,9 +1,12 @@
 import React from "react";
 import "./SearchGrid.css"
-
 import { ImageCard } from "../ImageCard/ImageCard";
 
-const SearchGrid = ({ images, setSelected }) => {
+interface ChildProps{
+  images : any[];
+  setSelected : any;
+}
+const SearchGrid: React.FC<ChildProps>  = ({ images , setSelected }) => {
   return (
     <div className="search-grid">
       {images &&

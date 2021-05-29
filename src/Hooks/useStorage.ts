@@ -4,10 +4,10 @@ import { projectStorage, projectStore } from "../Firebase/Config";
 import { useUser } from "../Context/UserContext";
 import { usePrivacy } from "../Context/PrivacyContext";
 
-const useStorage = (file) => {
-  const [progress, setProgress] = useState(null);
+const useStorage = (file : File) => {
+  const [progress, setProgress] = useState<number|null>(null);
   const [url, setUrl] = useState(null);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<String|null>(null);
   const { user } = useUser();
   const { privacy } = usePrivacy();
   useEffect(() => {
@@ -22,7 +22,7 @@ const useStorage = (file) => {
         const percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
         setProgress(percentage);
       },
-      (error) => {
+      (error : any) => {
         setError(error);
       },
       async () => {
