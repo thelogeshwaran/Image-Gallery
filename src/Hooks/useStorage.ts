@@ -4,10 +4,10 @@ import { projectStorage, projectStore } from "../Firebase/Config";
 import { useUser } from "../Context/UserContext";
 import { usePrivacy } from "../Context/PrivacyContext";
 
-const useStorage = (file : File) => {
-  const [progress, setProgress] = useState<number|null>(null);
-  const [url, setUrl] = useState(null);
-  const [error, setError] = useState<String|null>(null);
+const useStorage = (file: File) => {
+  const [progress, setProgress] = useState<number | null>(null);
+  const [url, setUrl] = useState<string | null>(null);
+  const [error, setError] = useState<String | null>(null);
   const { user } = useUser();
   const { privacy } = usePrivacy();
   useEffect(() => {
@@ -22,9 +22,9 @@ const useStorage = (file : File) => {
         const percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
         setProgress(percentage);
       },
-      (error : any ) => {
+      (error: any) => {
         setError(error);
-      }, 
+      },
       async () => {
         const url = await storageRef.getDownloadURL();
         if (privacy === "public") {
@@ -36,7 +36,6 @@ const useStorage = (file : File) => {
           });
           setUrl(url);
         } else {
-          console.log("added in personal");
           projectStore.collection("users").add({
             url: url,
             userId: user.uid,

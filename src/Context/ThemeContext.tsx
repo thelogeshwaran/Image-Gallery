@@ -1,7 +1,7 @@
 import React, { createContext, FC, useContext, useState } from "react";
-interface Props{
-  dark : boolean ;
-  setDark : Function;
+interface Props {
+  dark: boolean;
+  setDark: Function;
 }
 const ThemeContext = createContext<Props>({} as Props);
 

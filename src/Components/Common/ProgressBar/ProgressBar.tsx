@@ -5,7 +5,7 @@ import "./ProgressBar.css";
 
 interface ChildProps {
   file: File;
-  setFile:React.Dispatch<React.SetStateAction<File|null>>;
+  setFile: React.Dispatch<React.SetStateAction<File | null>>;
 }
 const Progressbar: React.FC<ChildProps> = ({ file, setFile }) => {
   const { url, progress } = useStorage(file);

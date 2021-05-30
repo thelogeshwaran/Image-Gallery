@@ -2,12 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./Modal.css";
 
-type ChildProps =  {
+type ChildProps = {
   selected: string;
   setSelected: Function;
-}
+};
 
-const Modal= ({ selected, setSelected } : ChildProps) => {
+const Modal = ({ selected, setSelected }: ChildProps) => {
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     if ((e.target as Element).classList.contains("modal")) {
       setSelected(null);

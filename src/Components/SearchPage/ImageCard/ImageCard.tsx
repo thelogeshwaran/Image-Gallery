@@ -7,19 +7,18 @@ import firebase from "firebase";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import { useUser } from "../../../Context/UserContext";
 import "./ImageCard.css";
-import {SearchResult} from "../../../Context/Types";
+import { SearchResult } from "../../../Context/Types";
 
-
-interface ChildProps{
-  doc: SearchResult; 
-  setSelected : React.Dispatch<React.SetStateAction<string | null>>;
+interface ChildProps {
+  doc: SearchResult;
+  setSelected: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
 export const ImageCard: React.FC<ChildProps> = ({ doc, setSelected }) => {
   const { user } = useUser();
 
   const [bookmark, setBookmark] = useState<boolean>(false);
-  const addToPersonal = (doc : SearchResult) => {
+  const addToPersonal = (doc: SearchResult) => {
     if (user) {
       setBookmark(true);
       projectStore.collection("users").add({

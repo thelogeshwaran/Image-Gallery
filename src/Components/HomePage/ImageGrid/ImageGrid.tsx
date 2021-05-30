@@ -7,8 +7,8 @@ import { Doc } from "../../../Context/Types";
 
 type ChildProps = {
   setSelected: React.Dispatch<React.SetStateAction<string | null>>;
-}
-const ImageGrid = ({ setSelected } : ChildProps) => {
+};
+const ImageGrid = ({ setSelected }: ChildProps) => {
   const { docs, loader } = useFireStore("images");
 
   return (
