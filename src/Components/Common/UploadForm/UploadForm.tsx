@@ -3,11 +3,7 @@ import ProgressBar from "../ProgressBar/ProgressBar";
 import "./UploadForm.css";
 
 const UploadForm = () => {
-  const [file, setFile] = useState(null);
-  const [error, setError] = useState(null);
-
-<<<<<<< HEAD:src/Components/Common/UploadForm/UploadForm.tsx
-const UploadForm = ()=>{
+ 
     const [file, setFile] = useState<File|null>(null);
     const [error , setError ] = useState<string|null>(null);
     
@@ -25,19 +21,8 @@ const UploadForm = ()=>{
         }
         
         
-=======
-  function inputHandler(e) {
-    const image = e.target.files[0];
-    const types = ["image/jpeg", "image/png"];
-    if (image && types.includes(image.type)) {
-      setFile(image);
-      setError("");
-    } else {
-      setError("Please upload the image of file type png or jpeg!");
-      setFile(null);
->>>>>>> main:src/Components/Common/UploadForm/UploadForm.js
     }
-  }
+  
   return (
     <form>
       <label>

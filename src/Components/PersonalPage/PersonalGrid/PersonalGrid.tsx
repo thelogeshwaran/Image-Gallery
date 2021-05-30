@@ -33,7 +33,6 @@ const PersonalGrid: React.FC<ChildProps> = ({ setSelected }) => {
         </div>
       ) : (
         <div className="personal-grid">
-<<<<<<< HEAD:src/Components/PersonalPage/PersonalGrid/PersonalGrid.tsx
       {docs &&
         docs.map((doc : PersonalDoc) => {
           if (doc.userId === user.uid) {
@@ -52,7 +51,7 @@ const PersonalGrid: React.FC<ChildProps> = ({ setSelected }) => {
                     alt="images"
                     onClick={() => setSelected(doc.url)}
                   />
-                </motion.div>
+                </motion.div> 
                 <div className="personal-options">
                   <Button
                     variant="contained"
@@ -72,45 +71,6 @@ const PersonalGrid: React.FC<ChildProps> = ({ setSelected }) => {
     </div>
       )
     }
-=======
-          {docs &&
-            docs.map((doc) => {
-              if (doc.userId === user.uid) {
-                return (
-                  <div key={doc.id}>
-                    <motion.div
-                      layout
-                      whileHover={{ opacity: 1, scale: 0.9 }}
-                      className="personal-wrap"
-                    >
-                      <motion.img
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1 }}
-                        src={doc.url}
-                        alt="images"
-                        onClick={() => setSelected(doc.url)}
-                      />
-                    </motion.div>
-                    <div className="personal-options">
-                      <Button
-                        variant="contained"
-                        color="secondary"
-                        startIcon={<DeleteIcon />}
-                        onClick={() => deleteHandler(doc)}
-                      >
-                        Delete
-                      </Button>
-                    </div>
-                  </div>
-                );
-              } else {
-                return null;
-              }
-            })}
-        </div>
-      )}
->>>>>>> main:src/Components/PersonalPage/PersonalGrid/PersonalGrid.js
     </div>
   );
 };
