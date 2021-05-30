@@ -9,13 +9,20 @@ import Fab from "@material-ui/core/Fab";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 import { useUser } from "../../../Context/UserContext";
 import "./ImageItem.css";
+import { Doc } from "../../../Context/Types";
 
-export const ImageItem = ({ doc, setSelected }) => {
+interface ChildProps{
+  doc: Doc;
+  setSelected:React.Dispatch<React.SetStateAction<string | null>>;
+}
+
+
+export const ImageItem: React.FC<ChildProps> = ({ doc, setSelected }) => {
   const { user } = useUser();
   const [like, setLike] = useState(false);
   const [bookmark, setBookmark] = useState(false);
 
-  function handleLike(doc) {
+  function handleLike(doc : Doc) {
     if (!like) {
       setLike(!like);
       projectStore
@@ -35,7 +42,7 @@ export const ImageItem = ({ doc, setSelected }) => {
     }
   }
 
-  const addToPersonal = (doc) => {
+  const addToPersonal = (doc : Doc ) => {
     if (user) {
       setBookmark(true);
       projectStore.collection("users").add({

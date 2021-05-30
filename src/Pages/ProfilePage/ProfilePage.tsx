@@ -15,7 +15,7 @@ import { usePrivacy } from "../../Context/PrivacyContext";
 const Profile = () => {
   const { user } = useUser();
 
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState<string|null>(null);
   const signOut = async () => {
     await auth.signOut();
     toast.success("Successfully, Logged Out!");

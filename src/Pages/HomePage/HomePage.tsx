@@ -5,7 +5,7 @@ import Modal from "../../Components/Common/Modal/Modal";
 import { usePrivacy } from "../../Context/PrivacyContext";
 
 function HomePage() {
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState<string | null>(null);
   const { setPrivacy } = usePrivacy();
 
   useEffect(() => {
