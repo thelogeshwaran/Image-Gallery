@@ -22,9 +22,9 @@ const useStorage = (file : File) => {
         const percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
         setProgress(percentage);
       },
-      (error : any) => {
+      (error : any ) => {
         setError(error);
-      },
+      }, 
       async () => {
         const url = await storageRef.getDownloadURL();
         if (privacy === "public") {

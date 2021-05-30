@@ -1,9 +1,10 @@
 import React from "react";
 import "./SearchGrid.css"
 import { ImageCard } from "../ImageCard/ImageCard";
+import { SearchResult } from "../../../Context/Types";
 
 interface ChildProps{
-  images : any[];
+  images : SearchResult[];
   setSelected :React.Dispatch<React.SetStateAction<string | null>>;
 }
 const SearchGrid: React.FC<ChildProps>  = ({ images , setSelected }) => {

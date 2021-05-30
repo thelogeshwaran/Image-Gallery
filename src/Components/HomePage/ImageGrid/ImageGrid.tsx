@@ -10,7 +10,7 @@ type ChildProps = {
 }
 const ImageGrid = ({ setSelected } : ChildProps) => {
   const { docs, loader } = useFireStore("images");
-  console.log("done")
+
   return (
     <div>
       {loader ? (
