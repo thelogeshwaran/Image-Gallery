@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import "./SearchBar.css"
-import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
+import "./SearchBar.css";
+import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
+
 
 type ChildProps ={
     onSubmit : Function;
@@ -26,8 +27,5 @@ const SearchBar: React.FC<ChildProps> = ({onSubmit}) => {
             
         </div>
     )
-}
-
-
 
 export default SearchBar;

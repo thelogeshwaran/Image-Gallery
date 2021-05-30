@@ -15,8 +15,8 @@ const ImageGrid = ({ setSelected } : ChildProps) => {
     <div>
       {loader ? (
         <div className="loader">
-            <Loader />
-            </div>
+          <Loader />
+        </div>
       ) : (
         <div className="image-grid">
           {docs &&

@@ -1,39 +1,38 @@
 form {
-    margin: 30px auto 10px;
-    text-align: center;
-  }
-  
-  label input {
-    height: 0;
-    width: 0;
-    opacity: 0;
-  }
-  
-  label {
-    display: block;
-    height: 30px;
-    width: 30px;
-    border: 1px solid var(--primary);
-    border-radius: 10%;
-    margin: 10px auto;
-    font-weight: bold;
-    color: var(--primary);
-    font-size: 24px;
-    line-height: 30px;
-    cursor: pointer;
-  }
-  
-  label:hover {
-    background: var(--primary);
-    color: white;
-  }
-  
-  output {
-    font-size: 0.8rem;
-    height: 50px;
-  }
-  
-  .error {
-    color: var(--error);
-  }
-  
+  margin: 30px auto 10px;
+  text-align: center;
+}
+
+label input {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+label {
+  display: block;
+  height: 30px;
+  width: 30px;
+  border: 1px solid var(--primary);
+  border-radius: 10%;
+  margin: 10px auto;
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 24px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+label:hover {
+  background: var(--primary);
+  color: white;
+}
+
+output {
+  font-size: 0.8rem;
+  height: 50px;
+}
+
+.error {
+  color: var(--error);
+}
